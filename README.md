@@ -27,37 +27,38 @@ An animal can starve to death, or can be deceased because of obesity.
 Different reactions of animals:
 
 Rabbit: 
-meat -> weight decreases by 1
-vegetables -> weight increases by 2
-fruit -> weight increases by 1
-Obesity: >=4
+ - meat -> weight decreases by 1
+ - vegetables -> weight increases by 2
+ - fruit -> weight increases by 1
+ - Obesity: >=4
 Wolf:
-meat -> weight increases by 3
-vegetables -> weight decreases by 1
-fruit -> weight decreases by 1
-Obesity: >=6
+ - meat -> weight increases by 3
+ - vegetables -> weight decreases by 1
+ - fruit -> weight decreases by 1
+ - Obesity: >=6
 Hedgehog:
-meat -> weight decreases by 1
-vegetables -> weight does not change
-fruit -> weight increases by 2
-Obesity: >=5
+ - meat -> weight decreases by 1
+ - vegetables -> weight does not change
+ - fruit -> weight increases by 2
+ - Obesity: >=5
 Bear:
-meat -> weight increases by 1
-vegetables -> weight increases by 1
-fruit -> weight decreases by 1
-Obesity: >=10
+ - meat -> weight increases by 1
+ - vegetables -> weight increases by 1
+ - fruit -> weight decreases by 1
+ - Obesity: >=10
 
 Run a simulation of this Zoo:
 Animals:
-Akela the wolf, starter weight: 3
-Balu the bear, starter weight: 4
-Tapsi the rabbit, starter weight: 2
-Brumi the bear, starter weight: 6
-Durum the hedgehog, starter weight: 4
+ - Akela the wolf, starter weight: 3
+ - Balu the bear, starter weight: 4
+ - Tapsi the rabbit, starter weight: 2
+ - Brumi the bear, starter weight: 6
+ - Durum the hedgehog, starter weight: 4
 
 Foods given: meat, vegetables, meat, fruit, meat
 
 **Use MVC and factory pattern in this task!**
+
 _Possible development options:_
  - let your Zoo able to read the animals and the food from a file (development is in progress)
  - let your Zoo able to read the animals and the food from a database (development is in prgress)
