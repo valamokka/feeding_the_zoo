@@ -31,17 +31,20 @@ Rabbit:
  - vegetables -> weight increases by 2
  - fruit -> weight increases by 1
  - Obesity: >=4
+
 Wolf:
  - meat -> weight increases by 3
  - vegetables -> weight decreases by 1
  - fruit -> weight decreases by 1
  - Obesity: >=6
 Hedgehog:
+   
  - meat -> weight decreases by 1
  - vegetables -> weight does not change
  - fruit -> weight increases by 2
  - Obesity: >=5
 Bear:
+   
  - meat -> weight increases by 1
  - vegetables -> weight increases by 1
  - fruit -> weight decreases by 1
