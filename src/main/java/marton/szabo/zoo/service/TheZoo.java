@@ -6,12 +6,12 @@ import marton.szabo.zoo.model.AnimalFactory;
 
 import java.util.List;
 
-public class FeedingTheZoo {
+public class TheZoo {
 
     private final List<Animal> ANIMALS;
     private final List<String> FOOD;
 
-    public FeedingTheZoo(AnimalFactory animalFactory, ZooDAO zooDAO) {
+    public TheZoo(AnimalFactory animalFactory, ZooDAO zooDAO) {
         this.ANIMALS = animalFactory.generateAllAnimal(zooDAO.getAllAnimalsData());
         this.FOOD = zooDAO.getAllFoodsData();
     }

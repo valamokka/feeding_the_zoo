@@ -1,6 +1,5 @@
 package marton.szabo.zoo.dao.file;
 
-import lombok.Getter;
 import marton.szabo.zoo.dao.ZooDAO;
 
 import java.io.File;
@@ -9,20 +8,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ReadDataFile implements ZooDAO {
+public class ReadDataFromFile implements ZooDAO {
 
-    private File fileAnimals;
-    private File fileFood;
+    private final File FILE_ANIMALS;
+    private final File FILE_FOOD;
 
-    public ReadDataFile(String fileAnimals, String fileFood) {
-        this.fileAnimals = new File(fileAnimals);
-        this.fileFood = new File(fileFood);
+    public ReadDataFromFile(String fileAnimals, String fileFood) {
+        FILE_ANIMALS = new File(fileAnimals);
+        FILE_FOOD = new File(fileFood);
     }
 
     @Override
     public List<String[]> getAllAnimalsData() {
         List<String[]> animals = new ArrayList<>();
-        try (Scanner scanner = new Scanner(fileAnimals)) {
+        try (Scanner scanner = new Scanner(FILE_ANIMALS)) {
             while (scanner.hasNextLine()) {
                 animals.add(scanner.nextLine().split(" "));
             }
@@ -35,7 +34,7 @@ public class ReadDataFile implements ZooDAO {
     @Override
     public List<String> getAllFoodsData() {
         List<String> food = new ArrayList<>();
-        try (Scanner scanner = new Scanner(fileFood)) {
+        try (Scanner scanner = new Scanner(FILE_FOOD)) {
             while (scanner.hasNextLine()) {
                 food.add(scanner.nextLine());
             }
