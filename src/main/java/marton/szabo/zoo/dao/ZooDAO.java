@@ -1,7 +1,10 @@
 package marton.szabo.zoo.dao;
 
+import java.util.List;
+
 public interface ZooDAO {
 
-    void getAllAnimalsData();
-    void getAllFoodsData();
+    List<String[]> getAllAnimalsData();
+
+    List<String> getAllFoodsData();
 }

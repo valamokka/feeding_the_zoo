@@ -1,21 +1,24 @@
 package marton.szabo.zoo.service;
 
+import marton.szabo.zoo.dao.ZooDAO;
 import marton.szabo.zoo.model.Animal;
+import marton.szabo.zoo.model.AnimalFactory;
+
 import java.util.List;
 
 public class FeedingTheZoo {
 
-    private List<Animal> animals;
+    private final List<Animal> ANIMALS;
     private final List<String> FOOD;
 
-    public FeedingTheZoo(List<Animal> animals, List<String> food) {
-        this.animals = animals;
-        this.FOOD = food;
+    public FeedingTheZoo(AnimalFactory animalFactory, ZooDAO zooDAO) {
+        this.ANIMALS = animalFactory.generateAllAnimal(zooDAO.getAllAnimalsData());
+        this.FOOD = zooDAO.getAllFoodsData();
     }
 
     public void feedTheZoo() {
         for (String food : FOOD) {
-            for (Animal animal : animals) {
+            for (Animal animal : ANIMALS) {
                 if (animal.isAlive()) {
                     switch (food) {
                         case "meat":
@@ -36,11 +39,11 @@ public class FeedingTheZoo {
 
     public void printResults() {
         System.out.printf("After %d days of feeding the animals:%n", FOOD.size());
-        for (Animal animals1 : animals) {
-            if (animals1.isAlive()) {
-                System.out.printf("%s's weight is: %d%n", animals1.getName(), animals1.getWeight());
+        for (Animal animal : ANIMALS) {
+            if (animal.isAlive()) {
+                System.out.printf("%s's weight is: %d%n", animal.getName(), animal.getWeight());
             } else {
-                System.out.printf("%s is DECEASED :(%n", animals1.getName());
+                System.out.printf("%s is DECEASED :(%n", animal.getName());
             }
 
         }
